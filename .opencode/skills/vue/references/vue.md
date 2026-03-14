@@ -47,12 +47,18 @@ const form = reactive({ email: '', password: '' })
 ## Component Naming
 
 Name components after their parent folder to prevent scope conflicts.
+Folders are always lowercase kebab-case. Never PascalCase or camelCase.
 
 ```
 components/
-└── User/
+└── user/
     ├── UserCard.vue
     └── UserAvatar.vue
+
+// ❌ Wrong
+components/
+└── User/       // PascalCase — never
+└── userCard/   // camelCase — never
 ```
 
 ## Template Conventions

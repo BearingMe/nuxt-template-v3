@@ -72,13 +72,18 @@ const form = reactive({
 
 ### 3. Nomenclatura de Componentes
 
-Sempre use o nome da pasta pai para evitar conflitos de escopo no projeto.
+Sempre use o nome da pasta pai para evitar conflitos de escopo no projeto. Pastas sempre em kebab-case e lowercase. Nunca PascalCase ou camelCase em nomes de pastas.
 
 ```sh
 components/
-└── User/
+└── user/
     ├── UserCard.vue      // ✅ Correto (Contexto explícito)
     └── UserAvatar.vue    // ✅ Correto
+
+// ❌ Incorreto
+components/
+└── User/         // PascalCase — não usar
+└── userCard/     // camelCase — não usar
 ```
 
 ### Templates: Self-closing e CamelCase
