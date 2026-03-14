@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@pinia/nuxt',
     'shadcn-nuxt',
-    '@vee-validate/nuxt'
+    '@vee-validate/nuxt',
+    '@vueuse/nuxt',
   ],
 
   css: ['~/assets/css/main.css'],
