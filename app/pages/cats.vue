@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useCats } from "@/api/cats/queries";
 
-definePageMeta({ layout: "default" });
-
 const { data: cats, isPending, isError, refetch } = useCats(12);
 </script>
 
@@ -21,7 +19,7 @@ const { data: cats, isPending, isError, refetch } = useCats(12);
       </div>
       <button
         class="neon-border-yellow border-primary text-primary hover:bg-primary hover:text-primary-foreground border px-4 py-2 text-xs tracking-widest uppercase transition-all"
-        @click="refetch"
+        @click="() => refetch()"
       >
         [ RESCAN ]
       </button>
@@ -75,12 +73,12 @@ const { data: cats, isPending, isError, refetch } = useCats(12);
           />
           <!-- Image overlay -->
           <div
-            class="from-card absolute inset-0 bg-gradient-to-t via-transparent to-transparent"
+            class="from-card absolute inset-0 bg-linear-to-t via-transparent to-transparent"
           ></div>
         </div>
 
         <!-- Info -->
-        <div v-if="cat.breeds?.length" class="p-5">
+        <div v-if="cat.breeds?.[0]" class="p-5">
           <div class="mb-3 flex items-center justify-between">
             <h2 class="neon-glow-yellow text-primary text-lg font-bold tracking-widest uppercase">
               {{ cat.breeds[0].name }}
