@@ -17,3 +17,8 @@ maska
 axios
 prettier
 prettier-plugin-tailwindcss
+eslint-config-prettier
+lint-staged
+husky
+@commitlint/cli
+@commitlint/config-conventional
