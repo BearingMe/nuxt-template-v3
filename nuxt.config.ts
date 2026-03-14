@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/test-utils',
     '@pinia/nuxt',
-    'shadcn-nuxt'
+    'shadcn-nuxt',
+    '@vee-validate/nuxt'
   ],
 
   css: ['~/assets/css/main.css'],
@@ -24,5 +25,15 @@ export default defineNuxtConfig({
 
   shadcn: {
     prefix: "",
+  },
+
+  veeValidate: {
+    autoImports: true,
+    componentNames: {
+      Form: 'VeeForm',
+      Field: 'VeeField',
+      FieldArray: 'VeeFieldArray',
+      ErrorMessage: 'VeeErrorMessage',
+    },
   },
 })
