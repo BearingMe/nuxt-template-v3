@@ -13,6 +13,7 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:unit": "vitest --project unit",
+    "typecheck": "nuxt typecheck",
     "test:nuxt": "vitest --project nuxt",
     "prepare": "husky"
   },
