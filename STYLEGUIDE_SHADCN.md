@@ -59,11 +59,11 @@ Se precisar de um comportamento extra, crie um novo componente que envolve o pri
 ```vue
 <!-- components/App/AppLoadingButton.vue -->
 <script setup lang="ts">
-import { Button } from '~/components/ui/button'
+import { Button } from "~/components/ui/button";
 
 const props = defineProps<{
-  loading?: boolean
-}>()
+  loading?: boolean;
+}>();
 </script>
 
 <template>

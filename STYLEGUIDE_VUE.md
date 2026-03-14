@@ -6,21 +6,21 @@ Exemplo:
 <script setup lang="ts">
 // 1. Macros
 const props = defineProps<{
-  userId: string
-  label?: string
-}>()
+  userId: string;
+  label?: string;
+}>();
 
-const model = defineModel<string>()
-const emit = defineEmits(['save'])
+const model = defineModel<string>();
+const emit = defineEmits(["save"]);
 
 // 2. Estado e Hooks
-const usersStore = useUsers() // Composable camelCase
-const isLoading = ref(false)
-const upperLabel = computed(() => props.label?.toUpperCase())
+const usersStore = useUsers(); // Composable camelCase
+const isLoading = ref(false);
+const upperLabel = computed(() => props.label?.toUpperCase());
 
 // 3. Handlers
 function handleSave() {
-  emit('save', model.value)
+  emit("save", model.value);
 }
 </script>
 
@@ -28,10 +28,7 @@ function handleSave() {
   <div class="user-input-group">
     <label>{{ upperLabel }}</label>
     <input v-model="model" type="text" />
-    <VoltButton 
-      :loading="isLoading" 
-      @click="handleSave" 
-    />
+    <VoltButton :loading="isLoading" @click="handleSave" />
   </div>
 </template>
 ```
@@ -62,14 +59,14 @@ Use `ref` para manter a consistência. `reactive` é exceção para objetos dens
 ```vue
 <script>
 // ✅ CORRETO: Consistente e fácil de identificar no script (.value)
-const name = ref('Aizen')
-const age = ref(30)
+const name = ref("Aizen");
+const age = ref(30);
 
 // ⚠️ EXCEÇÃO: Apenas para agrupamentos lógicos inseparáveis
 const form = reactive({
-  email: '',
-  password: ''
-})
+  email: "",
+  password: "",
+});
 </script>
 ```
 

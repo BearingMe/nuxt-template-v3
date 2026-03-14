@@ -3,19 +3,19 @@
   "editor.tabSize": 2,
 
   "[vue]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  
+
   "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  
+
   "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  
+
   "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   "files.associations": {
@@ -31,7 +31,7 @@
   "files.exclude": {
     "**/.nuxt": true,
     "**/.git": true,
-    
+
     ".opencode/node_modules": true,
     ".opencode/.gitignore": true,
     ".opencode/package.json": true

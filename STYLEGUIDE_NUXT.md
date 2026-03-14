@@ -5,24 +5,21 @@ Exemplo:
 ```vue
 <script setup lang="ts">
 // 1. Auto-imports: ref, useRoute e useOrders são globais. Sem 'import from' aqui.
-const route = useRoute()
-const { updateOrder } = useOrders() 
+const route = useRoute();
+const { updateOrder } = useOrders();
 
 // 2. Lógica delegada para composables
-const orderId = route.params.uuid as string
-const { data: order } = await useFetchOrder(orderId)
+const orderId = route.params.uuid as string;
+const { data: order } = await useFetchOrder(orderId);
 
 async function handleUpdate(payload: any) {
-  await updateOrder(orderId, payload)
+  await updateOrder(orderId, payload);
 }
 </script>
 
 <template>
   <NuxtLayout name="admin">
-    <OrderForm 
-      :initial-data="order" 
-      @submit="handleUpdate" 
-    />
+    <OrderForm :initial-data="order" @submit="handleUpdate" />
   </NuxtLayout>
 </template>
 ```
@@ -34,18 +31,19 @@ Nunca importe primitivas do Vue ou Nuxt manualmente. Se vir um import de vue ou 
 ```vue
 <script>
 // ❌ INCORRETO
-import { ref, computed } from 'vue'
-import { useRoute } from '#app'
+import { ref, computed } from "vue";
+import { useRoute } from "#app";
 
 // ✅ CORRETO (Apenas use as funções diretamente)
-const route = useRoute()
-const count = ref(0)
+const route = useRoute();
+const count = ref(0);
 </script>
 ```
 
 ### 2. Estrutura de Diretórios
 
 Cada arquivo tem seu lugar sagrado. Não inventa.
+
 - `/pages`: Apenas definição de rotas e orquestração de layouts.
 - `/composables`: Toda lógica de estado ou negócio reutilizável.
 - `/components`: Componentes de UI puros.
@@ -67,7 +65,7 @@ O nome do arquivo dos composables (hook do vue) dita o nome do import automátic
 <script>
 // composables/useUser.ts -> export const useUser = ...
 // ✅ CORRETO
-const { user } = useUser()
+const { user } = useUser();
 
 // ❌ INCORRETO
 // Nada de pastas 'services' ou 'utils' para lógica de composables.
