@@ -1,0 +1,28 @@
+{
+  "editor.formatOnSave": true,
+
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "nuxt.config.*": "*.config.ts, *.config.js, *.config.mjs, *.config.cjs"
+  },
+
+  "files.exclude": {
+    "**/.nuxt": true,
+    "**/.git": true
+  },
+
+  "search.exclude": {
+    "**/.nuxt": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "bun.lock": true
+  }
+}
