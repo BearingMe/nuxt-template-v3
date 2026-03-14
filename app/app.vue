@@ -3,9 +3,8 @@ import { VueQueryDevtools } from "@tanstack/vue-query-devtools";
 </script>
 
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
-  <VueQueryDevtools />
+  <NuxtLayout>
+    <NuxtPage />
+    <VueQueryDevtools />
+  </NuxtLayout>
 </template>
