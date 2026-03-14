@@ -28,11 +28,11 @@ const { data: cats, isPending, isError, refetch } = useCats(12);
     </div>
 
     <!-- Loading -->
-    <div v-if="isPending" class="flex flex-col gap-6">
+    <div v-if="isPending" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <div
-        v-for="n in 4"
+        v-for="n in 6"
         :key="n"
-        class="border-border bg-card relative h-72 w-full animate-pulse overflow-hidden border"
+        class="border-border bg-card relative h-64 w-full animate-pulse overflow-hidden border"
       >
         <div
           class="text-primary absolute top-2 left-2 text-xs tracking-widest uppercase opacity-60"
@@ -53,7 +53,7 @@ const { data: cats, isPending, isError, refetch } = useCats(12);
     </div>
 
     <!-- Feed -->
-    <div v-else class="flex flex-col gap-8">
+    <div v-else class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <article
         v-for="(cat, i) in cats"
         :key="cat.id"
@@ -71,7 +71,7 @@ const { data: cats, isPending, isError, refetch } = useCats(12);
           <img
             :src="cat.url"
             :alt="cat.breeds?.[0]?.name ?? 'Unknown specimen'"
-            class="max-h-[28rem] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
           <!-- Image overlay -->
           <div
