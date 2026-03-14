@@ -8,45 +8,103 @@ const { data: cats, isPending, isError, refetch } = useCats(12);
 
 <template>
   <div class="py-8">
-    <div class="mb-6 flex items-center justify-between">
+    <!-- Header -->
+    <div class="mb-8 flex items-start justify-between">
       <div>
-        <h1 class="text-3xl font-bold">Cat Timeline</h1>
-        <p class="text-muted-foreground mt-1">A curated feed of the internet's finest cats.</p>
+        <p class="text-accent mb-1 text-xs tracking-widest uppercase">// NEURAL CAT FEED v2.077</p>
+        <h1 class="neon-glow-yellow text-primary text-4xl font-bold tracking-widest uppercase">
+          CAT_FEED.EXE
+        </h1>
+        <p class="text-muted-foreground mt-1 text-sm tracking-wide">
+          Scanning Night City for optimal feline specimens...
+        </p>
       </div>
       <button
-        class="text-muted-foreground hover:text-foreground text-sm underline underline-offset-4 transition-colors"
+        class="neon-border-yellow border-primary text-primary hover:bg-primary hover:text-primary-foreground border px-4 py-2 text-xs tracking-widest uppercase transition-all"
         @click="refetch"
       >
-        Refresh
+        [ RESCAN ]
       </button>
     </div>
 
+    <!-- Loading -->
     <div v-if="isPending" class="flex flex-col gap-6">
-      <div v-for="n in 4" :key="n" class="bg-muted h-64 w-full animate-pulse rounded-xl"></div>
-    </div>
-
-    <div v-else-if="isError" class="text-muted-foreground py-24 text-center">
-      Failed to load cats. The cats are unavailable.
-    </div>
-
-    <div v-else class="flex flex-col gap-6">
-      <article
-        v-for="cat in cats"
-        :key="cat.id"
-        class="border-border bg-card overflow-hidden rounded-xl border"
+      <div
+        v-for="n in 4"
+        :key="n"
+        class="border-border bg-card relative h-72 w-full animate-pulse overflow-hidden border"
       >
-        <img
-          :src="cat.url"
-          :alt="cat.breeds?.[0]?.name ?? 'A cat'"
-          class="max-h-96 w-full object-cover"
-        />
+        <div
+          class="text-primary absolute top-2 left-2 text-xs tracking-widest uppercase opacity-60"
+        >
+          // LOADING SPECIMEN {{ n }}...
+        </div>
+      </div>
+    </div>
 
-        <div v-if="cat.breeds?.length" class="p-4">
-          <h2 class="text-lg font-semibold">{{ cat.breeds[0].name }}</h2>
-          <p class="text-muted-foreground mt-0.5 text-sm">
-            {{ cat.breeds[0].origin }} · {{ cat.breeds[0].temperament }}
+    <!-- Error -->
+    <div v-else-if="isError" class="py-24 text-center">
+      <p class="neon-glow-pink text-secondary text-2xl font-bold tracking-widest uppercase">
+        // SIGNAL LOST
+      </p>
+      <p class="text-muted-foreground mt-2 text-sm tracking-wide">
+        Connection to feline database severed. Try again, choom.
+      </p>
+    </div>
+
+    <!-- Feed -->
+    <div v-else class="flex flex-col gap-8">
+      <article
+        v-for="(cat, i) in cats"
+        :key="cat.id"
+        class="neon-border-yellow group border-border bg-card hover:border-primary relative overflow-hidden border transition-all"
+      >
+        <!-- Index tag -->
+        <div
+          class="bg-background/80 text-primary absolute top-3 left-3 z-10 px-2 py-0.5 text-xs tracking-widest uppercase backdrop-blur-sm"
+        >
+          #{{ String(i + 1).padStart(3, "0") }}
+        </div>
+
+        <!-- Image -->
+        <div class="relative overflow-hidden">
+          <img
+            :src="cat.url"
+            :alt="cat.breeds?.[0]?.name ?? 'Unknown specimen'"
+            class="max-h-[28rem] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+          <!-- Image overlay -->
+          <div
+            class="from-card absolute inset-0 bg-gradient-to-t via-transparent to-transparent"
+          ></div>
+        </div>
+
+        <!-- Info -->
+        <div v-if="cat.breeds?.length" class="p-5">
+          <div class="mb-3 flex items-center justify-between">
+            <h2 class="neon-glow-yellow text-primary text-lg font-bold tracking-widest uppercase">
+              {{ cat.breeds[0].name }}
+            </h2>
+            <span
+              class="border-accent text-accent border px-2 py-0.5 text-xs tracking-widest uppercase"
+            >
+              {{ cat.breeds[0].origin }}
+            </span>
+          </div>
+
+          <p class="neon-glow-pink text-secondary mb-3 text-xs tracking-widest uppercase">
+            // {{ cat.breeds[0].temperament }}
           </p>
-          <p class="mt-2 text-sm">{{ cat.breeds[0].description }}</p>
+
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            {{ cat.breeds[0].description }}
+          </p>
+        </div>
+
+        <div v-else class="p-5">
+          <p class="text-muted-foreground text-xs tracking-widest uppercase">
+            // IDENTITY UNKNOWN — ROGUE SPECIMEN
+          </p>
         </div>
       </article>
     </div>
