@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Button } from "@/components/ui/button";
+
 definePageMeta({
   layout: "default",
 });
@@ -10,5 +12,8 @@ definePageMeta({
     <p class="text-muted-foreground">
       Get started by editing <code class="font-mono">app/pages/index.vue</code>
     </p>
+    <Button as-child>
+      <NuxtLink to="/adopt">Adopt a cat</NuxtLink>
+    </Button>
   </div>
 </template>
