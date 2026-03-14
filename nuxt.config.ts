@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/test-utils',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'shadcn-nuxt'
   ],
 
   css: ['~/assets/css/main.css'],
@@ -19,5 +20,9 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss()
     ]
-  }
+  },
+
+  shadcn: {
+    prefix: "",
+  },
 })
