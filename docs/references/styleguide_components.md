@@ -74,6 +74,10 @@ const form = reactive({
 
 Sempre use o nome da pasta pai para evitar conflitos de escopo no projeto. Pastas sempre em kebab-case e lowercase. Nunca PascalCase ou camelCase em nomes de pastas.
 
+- `components/ui/` — primitivos globais (Button, Input, Text)
+- `components/app/` — componentes sem domínio claro, ou domínio com 1–2 componentes
+- `components/<domínio>/` — domínio com 3+ componentes sempre usados juntos (ex: `user/`, `billing/`)
+
 ```sh
 components/
 └── user/
