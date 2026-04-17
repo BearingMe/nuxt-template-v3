@@ -65,7 +65,6 @@ Este projeto inclui skills pré-instaladas para uso com assistentes de IA compat
 
 | Skill                     | Descrição                                                                                  |
 | ------------------------- | ------------------------------------------------------------------------------------------ |
-| `vue`                     | Padrões e convenções do projeto para Vue 3, Nuxt 4, Vue Query e shadcn                     |
 | `architecture-philosophy` | Princípios de arquitetura de software (Simple vs Complex vs Complicated, YAGNI, KISS, DRY) |
 | `skill-creator`           | Criação, melhoria e avaliação de novas skills                                              |
 

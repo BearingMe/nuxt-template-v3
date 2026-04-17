@@ -129,8 +129,3 @@ When reviewing or refactoring existing code:
 **User asks:** "I have two functions that both format dates but for different contexts."
 **Think:** They look similar but serve different purposes and may diverge. → Tolerate the duplication for now. If they stay identical after the system matures, then consider extracting.
 
-## Domain References
-
-When working in a specific domain, consult the relevant reference file for domain-specific rules that build on top of this philosophy:
-
-- **Frontend (component-based UI):** Read `references/frontend.md` — covers component hierarchy, line count thresholds, logic ownership, props vs composition, and folder organization for frontend frameworks.
