@@ -1,42 +1,34 @@
 {
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
-
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "files.associations": {
     "*.css": "tailwindcss"
   },
-
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "nuxt.config.*": "*.config.ts, *.config.js, *.config.mjs, *.config.cjs",
-    "README.md": "*.md"
+    "README.md": "*.md",
+    ".gitignore": ".*ignore"
   },
-
   "files.exclude": {
     "**/.nuxt": true,
     "**/.git": true,
-
     ".opencode/node_modules": true,
     ".opencode/.gitignore": true,
     ".opencode/package.json": true
   },
-
   "search.exclude": {
     "**/.nuxt": true,
     "**/node_modules": true,

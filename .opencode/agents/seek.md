@@ -1,7 +1,7 @@
 ---
 description: Low-cost file reader that summarizes large files for the main agent
 mode: subagent
-model: github-copilot/gpt-5-mini
+model: github-copilot/gpt-4o
 temperature: 0.1
 tools:
   read: true
