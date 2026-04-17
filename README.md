@@ -71,9 +71,9 @@ Este projeto inclui skills pré-instaladas para uso com assistentes de IA compat
 
 ## Documentação
 
-- [ARCHITECTURE.md](./ARCHITECTURE.md) — Estrutura do projeto e convenções
-- [STYLEGUIDE_VUE.md](./STYLEGUIDE_VUE.md) — Convenções de componentes Vue 3
-- [STYLEGUIDE_NUXT.md](./STYLEGUIDE_NUXT.md) — Convenções de estrutura e roteamento Nuxt 4
-- [STYLEGUIDE_VUE_QUERY.md](./STYLEGUIDE_VUE_QUERY.md) — Convenções de queries e mutations com TanStack Vue Query
-- [STYLEGUIDE_SHADCN.md](./STYLEGUIDE_SHADCN.md) — Convenções de uso e extensão dos primitivos shadcn
-- [CONTRIBUTING.md](./CONTRIBUTING.md) — Guia de contribuição e fluxo de trabalho
+Consulte [docs/index.md](./docs/index.md) para o índice completo de referências e guias.
+
+| Tipo                              | Descrição                                                             |
+| --------------------------------- | --------------------------------------------------------------------- |
+| [Referências](./docs/references/) | Arquitetura, hierarquia de componentes, style guides                  |
+| [Guias](./docs/guides/)           | Como criar páginas, componentes, queries, mutations e estender shadcn |
