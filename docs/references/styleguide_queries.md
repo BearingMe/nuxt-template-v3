@@ -1,4 +1,4 @@
-# Vue Query Style Guide
+# Query Style Guide
 
 Exemplo de query:
 

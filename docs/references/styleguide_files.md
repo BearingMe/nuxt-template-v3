@@ -1,4 +1,4 @@
-# Nuxt 4 Style Guide
+# Nuxt Style Guide
 
 Exemplo:
 

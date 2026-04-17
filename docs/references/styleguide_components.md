@@ -1,4 +1,4 @@
-# Vue 3 Style Guide
+# Components Style Guide
 
 Exemplo:
 
