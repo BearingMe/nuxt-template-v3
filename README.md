@@ -67,6 +67,8 @@ Este projeto inclui skills pré-instaladas para uso com assistentes de IA compat
 | ------------------------- | ------------------------------------------------------------------------------------------ |
 | `architecture-philosophy` | Princípios de arquitetura de software (Simple vs Complex vs Complicated, YAGNI, KISS, DRY) |
 | `skill-creator`           | Criação, melhoria e avaliação de novas skills                                              |
+| `caveman`                 | Modo de comunicação ultra-comprimido, reduz tokens ~75% mantendo precisão técnica          |
+| `read-the-docs`           | Pré-carrega o índice de documentação antes de responder perguntas sobre o projeto          |
 
 ## Documentação
 
